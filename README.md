@@ -1,11 +1,11 @@
 # ConvexHull-GrahamScan
 
 # Description
-The convex hull of a set of points is the set of all possible convex combinations formed by the points. The Graham Scan is an algorithm for finding the convex hull of a finite set of points. The algorithm is performed in the following order:
+The convex hull of a set of points is the set of all possible convex combinations formed by the points. Graham Scan is an algorithm for finding the convex hull of a finite set of points. The algorithm is performed through the following steps:
 1. A starting point is found by finding the point in the set with the smallest y value. If there is a tie, the one with the smallest x value will be taken.
 2. The rest of the points are ranked according to their polar angle with respect to the starting point $(x_{1}, y_{1})$. In the result of a tie, the farthest point is taken and the rest are removed. The polar angle is found by the equation: 
 $$\theta =\arctan\frac{y_{2} - y_{1}}{x_{2} - x_{1}}$$
-4. Points are considered sequentially. Points which form a left-handed or counter-clockwise turn will be added to the convex hull perimeter but those which form a right-handed or clockwise turn will be removed. A left-hand turn is defined when for 3 points: 
+4. Points are considered sequentially. Points which form a left-handed or counter-clockwise turn will be added to the convex hull perimeter but those which form a right-handed or clockwise turn will be removed. A left-hand turn is defined for 3 points when: 
 $$( x_{2} - x_{1} )( y_{3} - y_{1} ) -  ( y_{2} - y_{1} )( x_{3} - x_{1} )  > 0$$
 The Graham Scan algorithm has time complexity O(n log n)
 
